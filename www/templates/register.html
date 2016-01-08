@@ -1,4 +1,4 @@
-<form ua-signup>
+<form ua-signup  ng-controller="registerCtrl">
   <ion-view title="Sign Up">
     <ion-content>
       <div class="list list-inset">
@@ -6,20 +6,17 @@
           <span class="input-label">Name</span>
           <input type="text" name="register.name">
         </label>
-         <h3>{{name}}</h3>
         <label class="item item-input">
           <span class="input-label">Email</span>
           <input type="text" name="register.email" ua-is-email>
         </label>
-        <h3>{{email}}</h3>
         <label class="item item-input">
           <span class="input-label">Password</span>
           <input type="password" name="register.pass">
         </label>
-        <h3>{{password}}</h3>
       </div>
       <div class="padding">
-        <button type="submit" class="button button-block button-positive" ng-click="Register()">
+        <button type="submit" class="button button-block button-positive" ng-click="register(name,email,pass)">
           <span ng-show="!loading">Create Account</span>
           <i ng-show="loading" class="ion-loading-b"></i>
         </button>
